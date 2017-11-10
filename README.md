@@ -37,6 +37,9 @@ Since we have 3 characters and 6 test images for each which are not part of trai
 
 ## Requirements
 
+- OpenCV (https://github.com/opencv/opencv)
+- TensorFlow (https://github.com/tensorflow/tensorflow)
+
 ## License
 
 Copyright for all images are owned by their respective creators.
