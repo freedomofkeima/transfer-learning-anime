@@ -103,6 +103,26 @@ From the result above, 10 out of 12 have threshold > 0.95, while the lowest thre
 
 At this point, I decided to add Sakurauchi Riko, which is known for its similarity to Nishikino Maki.
 
+```
+INFO:tensorflow:2017-11-10 13:13:59.270717: Step 3999: Train accuracy = 100.0%
+INFO:tensorflow:2017-11-10 13:13:59.270912: Step 3999: Cross entropy = 0.005526
+INFO:tensorflow:2017-11-10 13:13:59.328139: Step 3999: Validation accuracy = 100.0% (N=100)
+INFO:tensorflow:Final test accuracy = 80.0% (N=15)
+```
+
+With 3 similar characters, the result is as the following:
+
+|Image|Classification| OK/NG |
+| --- | --- | --- |
+| ![](resized_for_test/nishikino_maki/31.jpg) | nishikino maki (score = 0.99352)<br>sakurauchi riko (score = 0.00612)<br>takimoto hifumi (score = 0.00036) | OK |
+| ![](resized_for_test/nishikino_maki/32.jpg) | nishikino maki (score = 0.47391)<br>sakurauchi riko (score = 0.37913)<br>takimoto hifumi (score = 0.14696) | OK |
+| ![](resized_for_test/nishikino_maki/33.jpg) | nishikino maki (score = 0.95976)<br>sakurauchi riko (score = 0.02797)<br>takimoto hifumi (score = 0.01227) | OK |
+| ![](resized_for_test/nishikino_maki/34.jpg) | nishikino maki (score = 0.88851)<br>sakurauchi riko (score = 0.07526)<br>takimoto hifumi (score = 0.03623) | OK |
+| ![](resized_for_test/nishikino_maki/35.jpg) | nishikino maki (score = 0.99025)<br>sakurauchi riko (score = 0.00766)<br>takimoto hifumi (score = 0.00209) | OK |
+| ![](resized_for_test/nishikino_maki/36.jpg) | nishikino maki (score = 0.96782)<br>sakurauchi riko (score = 0.02783)<br>takimoto hifumi (score = 0.00435) | OK |
+
+As you can see above, the similarity between Nishikino Maki and Sakurauchi Miko starts to lower down the confidence level of the resulted model. Nevertheless, all classifications are still correct, where 4 out of 6 maintain the threshold of > 0.95.
+
 ## License
 
 Copyright for all images are owned by their respective creators.
