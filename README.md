@@ -16,9 +16,24 @@ In this experiment, we will try to push Transfer Learning further, by using 3 di
 
 ![](screenshots/current_3_characters.png)
 
-Raw directory contains 36 images for each characters (JPG & PNG format). The first 30 images are used for training while the last 6 images are used for test.
+This experiment has 3 main steps:
+1. Utilize `lbpcascade_animeface` to recognize character face from each images
+2. Resize each images to 96 x 96 pixels
+3. Split images into training & test before creating the final model
+
+![](screenshots/schema.png)
+
+`raw` directory contains 36 images for each characters (JPG & PNG format). The first 30 images are used for training while the last 6 images are used for test.
 
 ![](screenshots/takimoto_hifumi_raw.png)
+
+As an example, we got the following result after applying Step 1 (`cropped` directory is shown at the right side):
+
+![](screenshots/process.png)
+
+`lbpcascade_animeface` can detect character faces with an accuracy of around **83%**. Failed images are stored in `raw (unrecognized)` for future improvements.
+
+Since we have 3 characters and 6 test images for each which are not part of training, `resized_for_test` contains 18 images in total. Surprisingly, **all characters** are detected properly with 0% top-1 error rate!
 
 ## Requirements
 
