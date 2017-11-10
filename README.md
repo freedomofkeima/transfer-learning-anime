@@ -92,6 +92,9 @@ The result is as the following:
 | ![](resized_for_test/nishikino_maki/34.jpg) | nishikino maki (score = 0.98629)<br>takimoto hifumi (score = 0.01371) | OK |
 | ![](resized_for_test/nishikino_maki/35.jpg) | nishikino maki (score = 0.99723)<br>takimoto hifumi (score = 0.00277) | OK |
 | ![](resized_for_test/nishikino_maki/36.jpg) | nishikino maki (score = 0.99695)<br>takimoto hifumi (score = 0.00305) | OK |
+
+|Image|Classification| OK/NG |
+| --- | --- | --- |
 | ![](resized_for_test/takimoto_hifumi/31.jpg) | takimoto hifumi (score = 0.63084)<br>nishikino maki (score = 0.36916) | OK|
 | ![](resized_for_test/takimoto_hifumi/32.jpg) | takimoto hifumi (score = 0.99728)<br>nishikino maki (score = 0.00272) | OK |
 | ![](resized_for_test/takimoto_hifumi/33.jpg) | takimoto hifumi (score = 0.99972)<br>nishikino maki (score = 0.00028) | OK |
@@ -122,6 +125,28 @@ With 3 similar characters, the result is as the following:
 | ![](resized_for_test/nishikino_maki/36.jpg) | nishikino maki (score = 0.96782)<br>sakurauchi riko (score = 0.02783)<br>takimoto hifumi (score = 0.00435) | OK |
 
 As you can see above, the similarity between Nishikino Maki and Sakurauchi Miko starts to lower down the confidence level of the resulted model. Nevertheless, all classifications are still correct, where 4 out of 6 maintain the threshold of > 0.95.
+
+|Image|Classification| OK/NG |
+| --- | --- | --- |
+| ![](resized_for_test/takimoto_hifumi/31.jpg) | takimoto hifumi (score = 0.86266)<br>nishikino maki (score = 0.13632)<br>sakurauchi riko (score = 0.00102) | OK |
+| ![](resized_for_test/takimoto_hifumi/32.jpg) | takimoto hifumi (score = 0.87614)<br>sakurauchi riko (score = 0.12334)<br>nishikino maki (score = 0.00051) | OK |
+| ![](resized_for_test/takimoto_hifumi/33.jpg) | takimoto hifumi (score = 0.99964)<br>sakurauchi riko (score = 0.00023)<br>nishikino maki (score = 0.00013) | OK |
+| ![](resized_for_test/takimoto_hifumi/34.jpg) | takimoto hifumi (score = 0.99417)<br>nishikino maki (score = 0.00472)<br>sakurauchi riko (score = 0.00110) | OK |
+| ![](resized_for_test/takimoto_hifumi/35.jpg) | takimoto hifumi (score = 0.94923)<br>sakurauchi riko (score = 0.04842)<br>nishikino maki (score = 0.00235) | OK |
+| ![](resized_for_test/takimoto_hifumi/36.jpg) | takimoto hifumi (score = 0.96029)<br>sakurauchi riko (score = 0.02822)<br>nishikino maki (score = 0.01150) | OK |
+
+Interestingly, the addition of 3rd character increases the confidence level of several Takimoto Hifumi testcases (see 1st and 4th result). Overall, this character can be easily differentiated compared to the other two.
+
+|Image|Classification| OK/NG |
+| --- | --- | --- |
+| ![](resized_for_test/sakurauchi_riko/31.jpg) | sakurauchi riko (score = 0.98747)<br>takimoto hifumi (score = 0.01054)<br>nishikino maki (score = 0.00199) | OK |
+| ![](resized_for_test/sakurauchi_riko/32.jpg) | sakurauchi riko (score = 0.96840)<br>takimoto hifumi (score = 0.02895)<br>nishikino maki (score = 0.00265) | OK |
+| ![](resized_for_test/sakurauchi_riko/33.jpg) | sakurauchi riko (score = 0.97713)<br>nishikino maki (score = 0.02167)<br>takimoto hifumi (score = 0.00119) | OK |
+| ![](resized_for_test/sakurauchi_riko/34.jpg) | sakurauchi riko (score = 0.90159)<br>nishikino maki (score = 0.06989)<br>takimoto hifumi (score = 0.02852) | OK |
+| ![](resized_for_test/sakurauchi_riko/35.jpg) | sakurauchi riko (score = 0.99713)<br>takimoto hifumi (score = 0.00184)<br>nishikino maki (score = 0.00103) | OK |
+| ![](resized_for_test/sakurauchi_riko/36.jpg) | sakurauchi riko (score = 0.79957)<br>nishikino maki (score = 0.19310)<br>takimoto hifumi (score = 0.00733) | OK |
+
+
 
 ## License
 
