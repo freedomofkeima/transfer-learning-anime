@@ -73,6 +73,36 @@ If everything works properly, you will get the classification result.  See [Tens
 
 ## Result Analysis
 
+Initially, we run the experiment with 2 characters: Nishikino Maki and Takimoto Hifumi.
+
+```
+INFO:tensorflow:2017-11-10 08:50:36.151387: Step 3999: Train accuracy = 100.0%
+INFO:tensorflow:2017-11-10 08:50:36.151592: Step 3999: Cross entropy = 0.002191
+INFO:tensorflow:2017-11-10 08:50:36.210147: Step 3999: Validation accuracy = 100.0% (N=100)
+INFO:tensorflow:Final test accuracy = 92.9% (N=14)
+```
+
+The result is as the following:
+
+|Image|Classification| OK/NG |
+| --- | --- | --- |
+| ![](resized_for_test/nishikino_maki/31.jpg) | nishikino maki (score = 0.99874)<br>takimoto hifumi (score = 0.00126) | OK |
+| ![](resized_for_test/nishikino_maki/32.jpg) | nishikino maki (score = 0.75519)<br>takimoto hifumi (score = 0.24481) | OK |
+| ![](resized_for_test/nishikino_maki/33.jpg) | nishikino maki (score = 0.99513)<br>takimoto hifumi (score = 0.00487) | OK |
+| ![](resized_for_test/nishikino_maki/34.jpg) | nishikino maki (score = 0.98629)<br>takimoto hifumi (score = 0.01371) | OK |
+| ![](resized_for_test/nishikino_maki/35.jpg) | nishikino maki (score = 0.99723)<br>takimoto hifumi (score = 0.00277) | OK |
+| ![](resized_for_test/nishikino_maki/36.jpg) | nishikino maki (score = 0.99695)<br>takimoto hifumi (score = 0.00305) | OK |
+| ![](resized_for_test/takimoto_hifumi/31.jpg) | takimoto hifumi (score = 0.63084)<br>nishikino maki (score = 0.36916) | OK|
+| ![](resized_for_test/takimoto_hifumi/32.jpg) | takimoto hifumi (score = 0.99728)<br>nishikino maki (score = 0.00272) | OK |
+| ![](resized_for_test/takimoto_hifumi/33.jpg) | takimoto hifumi (score = 0.99972)<br>nishikino maki (score = 0.00028) | OK |
+| ![](resized_for_test/takimoto_hifumi/34.jpg) | takimoto hifumi (score = 0.98852)<br>nishikino maki (score = 0.01148) | OK |
+| ![](resized_for_test/takimoto_hifumi/35.jpg) | takimoto hifumi (score = 0.99456)<br>nishikino maki (score = 0.00544) | OK |
+| ![](resized_for_test/takimoto_hifumi/36.jpg) | takimoto hifumi (score = 0.96630)<br>nishikino maki (score = 0.03370) | OK |
+
+From the result above, 10 out of 12 have threshold > 0.95, while the lowest threshold is 0.63.
+
+At this point, I decided to add Sakurauchi Riko, which is known for its similarity to Nishikino Maki.
+
 ## License
 
 Copyright for all images are owned by their respective creators.
