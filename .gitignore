@@ -1,0 +1,8 @@
+*.pyc
+
+# Others
+*~
+*.swp
+.DS_Store
+.idea/
+
