@@ -40,6 +40,39 @@ Since we have 3 characters and 6 test images for each which are not part of trai
 - OpenCV (https://github.com/opencv/opencv)
 - TensorFlow (https://github.com/tensorflow/tensorflow)
 
+## Steps
+
+1. The following command is used to populate `cropped` directory.
+
+```
+$ python bulk_convert.py raw/[character_name] cropped
+```
+
+2. The following command is used to populate `resized_for_training` & `resized_for_test` directory.
+
+```
+$ python bulk_resize.py cropped/[character_name] resized
+```
+
+After running the step above, you can decide how many images will be used in `resized_for_training` and how many images will be used in `resized_for_test`.
+
+3. Re-train the Inception model by using transfer learning:
+
+```
+$ bazel-bin/tensorflow/examples/image_retraining/retrain --image_dir ~/transfer-learning-anime/resized_for_traning/
+$ bazel build tensorflow/examples/image_retraining:label_image
+```
+
+4. At this point, the model is ready to use. We can run the following command to get the classification result:
+
+```
+$ bazel-bin/tensorflow/examples/image_retraining/label_image --graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt --output_layer=final_result:0 --image=$HOME/transfer-learning-anime/resized_for_test/[character name]/[image name]
+```
+
+If everything works properly, you will get the classification result.  See [TensorFlow Documentation](https://www.tensorflow.org/tutorials/image_retraining) for more options.
+
+## Result Analysis
+
 ## License
 
 Copyright for all images are owned by their respective creators.
