@@ -1,12 +1,10 @@
 # Transfer Learning for Anime Characters
 
-This repository is the continuation of [Flag #15 - Image Recognition for Anime Characters](http://freedomofkeima.com/blog/posts/flag-15-image-recognition-for-anime-characters).
-
-![lbpcascade_animeface.xml](lbpcascade_animeface.xml) is created by [nagadomi/lbpcascade_animeface](https://github.com/nagadomi/lbpcascade_animeface).
-
-Warning: This repository size is quite big (approx. 100 MB) since it includes training & test images.
+**Warning**: This repository size is quite big (approx. 100 MB) since it includes training & test images.
 
 ## Introduction
+
+This repository is the continuation of [Flag #15 - Image Recognition for Anime Characters](http://freedomofkeima.com/blog/posts/flag-15-image-recognition-for-anime-characters).
 
 In Flag #15, we can see that Transfer Learning works really well with 3 different anime characters: Nishikino Maki, Kotori Minami, and Ayase Eli.
 
@@ -146,8 +144,10 @@ Interestingly, the addition of 3rd character increases the confidence level of s
 | ![](resized_for_test/sakurauchi_riko/35.jpg) | sakurauchi riko (score = 0.99713)<br>takimoto hifumi (score = 0.00184)<br>nishikino maki (score = 0.00103) | OK |
 | ![](resized_for_test/sakurauchi_riko/36.jpg) | sakurauchi riko (score = 0.79957)<br>nishikino maki (score = 0.19310)<br>takimoto hifumi (score = 0.00733) | OK |
 
-
+From this experiment, the current bottleneck is located at Step 1, which have the overall accuracy of 83% in face detection.
 
 ## License
+
+![lbpcascade_animeface.xml](lbpcascade_animeface.xml) is created by [nagadomi/lbpcascade_animeface](https://github.com/nagadomi/lbpcascade_animeface).
 
 Copyright for all images are owned by their respective creators.
