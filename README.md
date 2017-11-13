@@ -1,6 +1,6 @@
 # Transfer Learning for Anime Characters
 
-**Warning**: This repository size is quite big (approx. 100 MB) since it includes training & test images.
+**Warning**: This repository size is quite big (approx. 100 MB) since it includes training and test images.
 
 ## Introduction
 
@@ -32,6 +32,8 @@ As an example, we got the following result after applying Step 1 (`cropped` dire
 `lbpcascade_animeface` can detect character faces with an accuracy of around **83%**. Failed images are stored in `raw (unrecognized)` for future improvements.
 
 Since we have 3 characters and 6 test images for each which are not part of training, `resized_for_test` contains 18 images in total. Surprisingly, **all characters** are detected properly with 0% top-1 error rate!
+
+**Update (Nov 13, 2017)**: See `animeface-2009` section below, which push overall accuracy to **93**%.
 
 ## Requirements
 
@@ -145,6 +147,37 @@ Interestingly, the addition of 3rd character increases the confidence level of s
 | ![](resized_for_test/sakurauchi_riko/36.jpg) | sakurauchi riko (score = 0.79957)<br>nishikino maki (score = 0.19310)<br>takimoto hifumi (score = 0.00733) | OK |
 
 From this experiment, the current bottleneck is located at Step 1, which have the overall accuracy of 83% in face detection.
+
+## animeface-2009
+
+[nagadomi/animeface-2009](https://github.com/nagadomi/animeface-2009) provides another method of face detection. 13 out of 21 unrecognized images are now recognized in `cropped (unrecognized)` directory.
+
+**Current found limitations**: it seems the script requires more memory and slower to run compared to `lbpcascade_animeface.xml`.
+
+|Image|Classification| OK/NG |
+| --- | --- | --- |
+| ![](resized_for_test_unrecognized/nishikino_maki/1.jpg) | nishikino maki (score = 0.99296)<br>sakurauchi riko (score = 0.00694)<br>takimoto hifumi (score = 0.00010) | OK |
+| ![](resized_for_test_unrecognized/nishikino_maki/3.jpg) | nishikino maki (score = 0.93702)<br>sakurauchi riko (score = 0.04017)<br>takimoto hifumi (score = 0.02281) | OK |
+| ![](resized_for_test_unrecognized/nishikino_maki/4.jpg) | nishikino maki (score = 0.99406)<br>sakurauchi riko (score = 0.00565)<br>takimoto hifumi (score = 0.00030) | OK |
+
+|Image|Classification| OK/NG |
+| --- | --- | --- |
+| ![](resized_for_test_unrecognized/takimoto_hifumi/2.jpg) | takimoto hifumi (score = 0.99242)<br>nishikino maki (score = 0.00431)<br>sakurauchi riko (score = 0.00327) | OK |
+| ![](resized_for_test_unrecognized/takimoto_hifumi/3.jpg) | takimoto hifumi (score = 0.99596)<br>sakurauchi riko (score = 0.00403)<br>nishikino maki (score = 0.00001) | OK |
+| ![](resized_for_test_unrecognized/takimoto_hifumi/4.jpg) | takimoto hifumi (score = 0.98369)<br>sakurauchi riko (score = 0.01498)<br>nishikino maki (score = 0.00133) | OK |
+| ![](resized_for_test_unrecognized/takimoto_hifumi/6.jpg) | takimoto hifumi (score = 0.99796)<br>sakurauchi riko (score = 0.00189)<br>nishikino maki (score = 0.00015) | OK |
+| ![](resized_for_test_unrecognized/takimoto_hifumi/7.jpg) | takimoto hifumi (score = 0.99601)<br>nishikino maki (score = 0.00335)<br>sakurauchi riko (score = 0.00064) | OK |
+| ![](resized_for_test_unrecognized/takimoto_hifumi/9.jpg) | takimoto hifumi (score = 0.99960)<br>sakurauchi riko (score = 0.00029)<br>nishikino maki (score = 0.00011) | OK |
+| ![](resized_for_test_unrecognized/takimoto_hifumi/10.jpg) | takimoto hifumi (score = 0.99995)<br>nishikino maki (score = 0.00004)<br>sakurauchi riko (score = 0.00001) | OK |
+
+
+|Image|Classification| OK/NG |
+| --- | --- | --- |
+| ![](resized_for_test_unrecognized/sakurauchi_riko/2.jpg) | sakurauchi riko (score = 0.84480)<br>nishikino maki (score = 0.12101)<br>takimoto hifumi (score = 0.03419) | OK |
+| ![](resized_for_test_unrecognized/sakurauchi_riko/5.jpg) | sakurauchi riko (score = 0.94310)<br>nishikino maki (score = 0.04296)<br>takimoto hifumi (score = 0.01393) | OK |
+| ![](resized_for_test_unrecognized/sakurauchi_riko/7.jpg) | sakurauchi riko (score = 0.96176)<br>takimoto hifumi (score = 0.03217)<br>nishikino maki (score = 0.00607) | OK |
+
+Since this method gives better result in detecting anime character face and classification still works perfectly, the overall accuracy is now around **93%**.
 
 ## License
 
