@@ -71,6 +71,8 @@ $ bazel-bin/tensorflow/examples/image_retraining/label_image --graph=/tmp/output
 
 If everything works properly, you will get the classification result.  See [TensorFlow Documentation](https://www.tensorflow.org/tutorials/image_retraining) for more options.
 
+Optionally, sample model can be downloaded by running `download_model.sh` script inside  `models (example)` directory.
+
 ## Result Analysis
 
 Initially, we run the experiment with 2 characters: Nishikino Maki and Takimoto Hifumi.
@@ -166,7 +168,7 @@ From this experiment, the current bottleneck is located at Step 1, which have th
 | ![](resized_for_test_unrecognized/takimoto_hifumi/3.jpg) | takimoto hifumi (score = 0.99596)<br>sakurauchi riko (score = 0.00403)<br>nishikino maki (score = 0.00001) | OK |
 | ![](resized_for_test_unrecognized/takimoto_hifumi/4.jpg) | takimoto hifumi (score = 0.98369)<br>sakurauchi riko (score = 0.01498)<br>nishikino maki (score = 0.00133) | OK |
 | ![](resized_for_test_unrecognized/takimoto_hifumi/6.jpg) | takimoto hifumi (score = 0.99796)<br>sakurauchi riko (score = 0.00189)<br>nishikino maki (score = 0.00015) | OK |
-| ![](resized_for_test_unrecognized/takimoto_hifumi/7.jpg) | takimoto hifumi (score = 0.99601)<br>nishikino maki (score = 0.00335)<br>sakurauchi riko (score = 0.00064) | OK |
+| ![](resized_for_test_unrecognized/takimoto_hifumi/8.jpg) | takimoto hifumi (score = 0.99601)<br>nishikino maki (score = 0.00335)<br>sakurauchi riko (score = 0.00064) | OK |
 | ![](resized_for_test_unrecognized/takimoto_hifumi/9.jpg) | takimoto hifumi (score = 0.99960)<br>sakurauchi riko (score = 0.00029)<br>nishikino maki (score = 0.00011) | OK |
 | ![](resized_for_test_unrecognized/takimoto_hifumi/10.jpg) | takimoto hifumi (score = 0.99995)<br>nishikino maki (score = 0.00004)<br>sakurauchi riko (score = 0.00001) | OK |
 
