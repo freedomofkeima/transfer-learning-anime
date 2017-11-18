@@ -31,9 +31,9 @@ As an example, we got the following result after applying Step 1 (`cropped` dire
 
 `lbpcascade_animeface` can detect character faces with an accuracy of around **83%**. Failed images are stored in `raw (unrecognized)` for future improvements.
 
-Since we have 3 characters and 6 test images for each which are not part of training, `resized_for_test` contains 18 images in total. Surprisingly, **all characters** are detected properly with 0% top-1 error rate!
+Since we have 3 characters and 6 test images for each which are not part of training, `resized_for_test` contains 18 images in total. Surprisingly, almost **all characters** are detected properly!
 
-**Update (Nov 13, 2017)**: See `animeface-2009` section below, which push overall accuracy to **93**%.
+**Update (Nov 13, 2017)**: See `animeface-2009` section below, which push face detection accuracy to **93**%.
 
 ## Requirements
 
@@ -148,7 +148,7 @@ Interestingly, the addition of 3rd character increases the confidence level of s
 | ![](resized_for_test/sakurauchi_riko/35.jpg) | sakurauchi riko (score = 0.99713)<br>takimoto hifumi (score = 0.00184)<br>nishikino maki (score = 0.00103) | OK |
 | ![](resized_for_test/sakurauchi_riko/36.jpg) | sakurauchi riko (score = 0.79957)<br>nishikino maki (score = 0.19310)<br>takimoto hifumi (score = 0.00733) | OK |
 
-From this experiment, the current bottleneck is located at Step 1, which have the overall accuracy of 83% in face detection.
+From this experiment, it seems that the current bottleneck is located at Step 1 (face detection), which have the overall accuracy of 83% in face detection.
 
 ## animeface-2009
 
@@ -179,7 +179,7 @@ From this experiment, the current bottleneck is located at Step 1, which have th
 | ![](resized_for_test_unrecognized/sakurauchi_riko/5.jpg) | sakurauchi riko (score = 0.94310)<br>nishikino maki (score = 0.04296)<br>takimoto hifumi (score = 0.01393) | OK |
 | ![](resized_for_test_unrecognized/sakurauchi_riko/7.jpg) | sakurauchi riko (score = 0.96176)<br>takimoto hifumi (score = 0.03217)<br>nishikino maki (score = 0.00607) | OK |
 
-Since this method gives better result in detecting anime character face and classification still works perfectly, the overall accuracy is now around **93%**.
+Since this method gives better result in detecting anime character face and classification still works with almost the same result, the overall face detection accuracy is now around **93%**.
 
 ## License
 
